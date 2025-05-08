@@ -20,7 +20,7 @@ conda create -n esg-trading python=3.8
 conda activate esg-trading
 pip install -r requirements.txt
 
-## Usage
+## **Usage**
 
 Run `python run_esg_agent.py --ticker NVDA --start-date 2025-04-05 --end-date 2025-05-02 --output-dir ./data` to fetch ESG news and export `*_esg_news.csv` and `*_esg_sentiment.csv`, then execute `python a_580-project\ 2.py` to run the full pipeline—data collection, technical indicator computation (moving averages, MACD, RSI, Bollinger Bands), ESG signal integration, trading signal generation, portfolio simulation, and backtesting. For basic data collection and signal mapping, use `python a_580-project\ 1.py`, which retrieves market data, maps ESG scores to buy/hold/sell signals, and updates internal state. Finally, run `python backtest.py` to scan all `<TICKER>_report.xlsx` files, build aggregate equity curves, and compute cross-ticker performance metrics (CAGR, volatility, Sharpe ratio, max drawdown, Sortino ratio, win rate, profit factor).  
 
