@@ -11,18 +11,9 @@ This repository implements an ESG-enhanced trading system that combines traditio
 ├── requirements.txt # Python dependencies
 ├── LICENSE # MIT open-source license
 └── README.md # Project overview and usage instructions
-## Environment Setup
 
-We recommend using Conda:
-
-```bash
-conda create -n esg-trading python=3.8
-conda activate esg-trading
-pip install -r requirements.txt
-
-## **Usage**
-
-Run `python run_esg_agent.py --ticker NVDA --start-date 2025-04-05 --end-date 2025-05-02 --output-dir ./data` to fetch ESG news and export `*_esg_news.csv` and `*_esg_sentiment.csv`, then execute `python a_580-project\ 2.py` to run the full pipeline—data collection, technical indicator computation (moving averages, MACD, RSI, Bollinger Bands), ESG signal integration, trading signal generation, portfolio simulation, and backtesting. For basic data collection and signal mapping, use `python a_580-project\ 1.py`, which retrieves market data, maps ESG scores to buy/hold/sell signals, and updates internal state. Finally, run `python backtest.py` to scan all `<TICKER>_report.xlsx` files, build aggregate equity curves, and compute cross-ticker performance metrics (CAGR, volatility, Sharpe ratio, max drawdown, Sortino ratio, win rate, profit factor).  
+## Usage
+Run `python run_esg_agent.py --ticker NVDA --start-date 2025-04-05 --end-date 2025-05-02 --output-dir ./data` to fetch ESG news and export `*_esg_news.csv` and `*_esg_sentiment.csv`. Then run `python "a_580-project 2.py"` to execute the full pipeline—data collection, technical indicator computation (moving averages, MACD, RSI, Bollinger Bands), ESG signal integration, trading signal generation, portfolio simulation, and backtesting. For basic data collection and signal mapping, run `python "a_580-project 1.py"`, which fetches market data, maps ESG scores to buy/hold/sell signals, and updates internal state. Finally, run `python backtest.py` to scan all `<TICKER>_report.xlsx` files, build aggregate equity curves, and compute cross-ticker performance metrics (CAGR, volatility, Sharpe ratio, max drawdown, Sortino ratio, win rate, profit factor). 
 
 ## Results
 Individual ticker reports are output as <TICKER>_report.xlsx.
@@ -31,3 +22,12 @@ Cross-ticker performance metrics are printed to the console and can be redirecte
 
 ## License
 This project is licensed under the MIT License
+
+## Environment Setup
+
+We recommend using Conda:
+
+```bash
+conda create -n esg-trading python=3.8
+conda activate esg-trading
+pip install -r requirements.txt
